@@ -1,12 +1,12 @@
-# Use official n8n Docker image
+# Use the official n8n image with n8n preinstalled
 FROM n8nio/n8n:latest
 
-# Tell Render which port to use
-ENV N8N_PORT=10000
+# Set default environment variables
+ENV N8N_PORT=5678
+ENV N8N_HOST=0.0.0.0
 
-# Expose the port
-EXPOSE 10000
+# Expose the n8n port
+EXPOSE 5678
 
-# Start n8n
-CMD ["n8n", "start"]
-
+# Run n8n
+CMD ["n8n"]
